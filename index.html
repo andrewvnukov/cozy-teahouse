@@ -667,6 +667,9 @@ function drawGuest(g, sp, cx, cy, scale, dir, sip){
     g.fillStyle=sp.c2; g.beginPath(); g.ellipse(0,-d.bh*0.55,d.bw*0.22,d.bh*0.75,0,0,6.28); g.fill();
   }
   g.restore();
+  // ── шея: сплошная заливка без обводки, скрывает шов между эллипсом тела и кругом головы ──
+  g.fillStyle=bodyFill(g,-d.hr*0.15,hy+d.hr*0.9,d.hr*0.5,d.bh*0.4,sp.c1);
+  g.beginPath(); g.ellipse(0,hy+d.hr*0.85,d.hr*0.5,d.bh*0.4,0,0,6.28); g.fill();
   // ── голова ──
   g.save(); g.translate(0,hy);
   // уши/рога/крылья позади головы
